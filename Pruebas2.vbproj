@@ -1,0 +1,926 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{34322924-01F5-4AD0-B394-F7CC51177987}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Pruebas2.My.MyApplication</StartupObject>
+    <RootNamespace>Pruebas2</RootNamespace>
+    <AssemblyName>Pruebas2</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Pruebas2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Pruebas2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Downloads\mysql-connector-net-5.1.7-noinstall\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Base.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Base.vb">
+      <DependentUpon>Base.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\bcp\carta1\BCP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\bcp\carta1\BCP.Designer.vb">
+      <DependentUpon>BCP.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporte.Designer.vb">
+      <DependentUpon>frmReporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubReporte.Designer.vb">
+      <DependentUpon>frmSubReporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubReporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Menu.Designer.vb">
+      <DependentUpon>Menu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\bcp\carta1\rptCartas.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCartas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\bcp\carta1\rptDetalles.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\dinners\carta1\DINNERS1.Designer.vb">
+      <DependentUpon>DINNERS1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\dinners\carta1\DINNERS1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\dinners\carta1\rptCarta1Dinners.vb">
+      <DependentUpon>rptCarta1Dinners.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\dinners\carta1\rptDetalles1Dinners.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles1Dinners.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\dinners\carta2\DINNERS2.Designer.vb">
+      <DependentUpon>DINNERS2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\dinners\carta2\DINNERS2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\dinners\carta2\rptCarta2Dinners.vb">
+      <DependentUpon>rptCarta2Dinners.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\dinners\carta2\rptDetalles2Dinners.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles2Dinners.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta1\FINANCIERO1.Designer.vb">
+      <DependentUpon>FINANCIERO1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\financiero\carta1\FINANCIERO1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta1\rptCarta1Finan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCarta1Finan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta1\rptDetalles1Finan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles1Finan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta2\FINANCIERO2.Designer.vb">
+      <DependentUpon>FINANCIERO2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\financiero\carta2\FINANCIERO2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta2\rptCarta2Finan.vb">
+      <DependentUpon>rptCarta2Finan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\financiero\carta2\rptDetalles2Finan.vb">
+      <DependentUpon>rptDetalles2Finan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\financiero\carta3\FINANCIERO3.Designer.vb">
+      <DependentUpon>FINANCIERO3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\financiero\carta3\FINANCIERO3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta3\rptCarta3Finan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCarta3Finan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta3\rptDetalles3Finan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles3Finan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta4\FINANCIERO4.Designer.vb">
+      <DependentUpon>FINANCIERO4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\financiero\carta4\FINANCIERO4.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta4\rptCarta4Finan.vb">
+      <DependentUpon>rptCarta4Finan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\financiero\carta4\rptDetalles4Finan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles4Finan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta5\FINANCIERO5.Designer.vb">
+      <DependentUpon>FINANCIERO5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\financiero\carta5\FINANCIERO5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta5\rptCarta5Finan.vb">
+      <DependentUpon>rptCarta5Finan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\financiero\carta5\rptDetalles5Finan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles5Finan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta6\FINANCIERO6.Designer.vb">
+      <DependentUpon>FINANCIERO6.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\financiero\carta6\FINANCIERO6.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta6\rptCarta6Finan.vb">
+      <DependentUpon>rptCarta6Finan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\financiero\carta6\rptDetalles6Finan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles6Finan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta7\FINANCIERO7.Designer.vb">
+      <DependentUpon>FINANCIERO7.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\financiero\carta7\FINANCIERO7.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\financiero\carta7\rptCarta7Finan.vb">
+      <DependentUpon>rptCarta7Finan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\financiero\carta7\rptDetalles7Finan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles7Finan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\rpp\carta1\CartaRPP.Designer.vb">
+      <DependentUpon>CartaRPP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\rpp\carta1\CartaRPP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\rpp\carta1\EECC.Designer.vb">
+      <DependentUpon>EECC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\rpp\carta1\EECC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\rpp\carta1\RPP1.Designer.vb">
+      <DependentUpon>RPP1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\rpp\carta1\RPP1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\rpp\carta1\rpp_eecc.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpp_eecc.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\rpp\carta1\rptCartasRpp.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCartasRpp.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\rpp\cli_unicos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cli_unicos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\rpp\cli_unicos.vb">
+      <DependentUpon>cli_unicos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\sci\carta7\rptCartas7SCI.vb">
+      <DependentUpon>rptCartas7SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta7\rptDetalles7SCI.vb">
+      <DependentUpon>rptDetalles7SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta7\SCI7.Designer.vb">
+      <DependentUpon>SCI7.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\sci\carta7\SCI7.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta6\rptCartas6SCI.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCartas6SCI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta6\rptDetalles6SCI.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles6SCI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta6\SCI6.Designer.vb">
+      <DependentUpon>SCI6.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\sci\carta6\SCI6.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta5\rptCartas5SCI.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCartas5SCI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta5\rptDetalles5SCI.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles5SCI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta5\SCI5.Designer.vb">
+      <DependentUpon>SCI5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\sci\carta5\SCI5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta4\rptCartas4SCI.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCartas4SCI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta4\rptDetalles4SCI.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles4SCI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta4\SCI4.Designer.vb">
+      <DependentUpon>SCI4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\sci\carta4\SCI4.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta3\Carta1GNB.vb">
+      <DependentUpon>rptCarta3SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta3\rptCarta1GNB.vb">
+      <DependentUpon>rptCarta3SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta3\rptCarta3SCI.vb">
+      <DependentUpon>rptCarta3SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta3\rptDetalles3SCI.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles3SCI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta3\SCI3.Designer.vb">
+      <DependentUpon>SCI3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\sci\carta3\SCI3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta2\Carta1GNB.vb">
+      <DependentUpon>rptCarta2SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta2\rptCarta1GNB.vb">
+      <DependentUpon>rptCarta2SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta2\rptCarta2SCI.vb">
+      <DependentUpon>rptCarta2SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta2\rptDetalles2SCI.vb">
+      <DependentUpon>rptDetalles2SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta2\SCI2.Designer.vb">
+      <DependentUpon>SCI2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\sci\carta2\SCI2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta1\Carta1GNB.vb">
+      <DependentUpon>rptCarta1SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta1\SCI1.Designer.vb">
+      <DependentUpon>SCI1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\sci\carta1\SCI1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta1\rptCarta1GNB.vb">
+      <DependentUpon>rptCarta1SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta1\rptCarta1SCI.vb">
+      <DependentUpon>rptCarta1SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta1\rptDetalles1SCI.vb">
+      <DependentUpon>rptDetalles1SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\gnb\carta1\rptCarta1GNB1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCarta1GNB.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\gnb\carta1\GNB.Designer.vb">
+      <DependentUpon>GNB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\gnb\carta1\GNB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\gnb\carta1\rptCarta1GNB.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCarta1GNB.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\gnb\carta1\Carta1GNB.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCarta1GNB.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\gnb\carta1\rptDetallesGNB.vb">
+      <DependentUpon>rptDetallesGNB.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta8\rptCartas8SCI.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCartas8SCI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta8\rptDetalles8SCI.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDetalles8SCI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta8\SCI8.Designer.vb">
+      <DependentUpon>SCI8.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\sci\carta8\SCI8.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\sci\carta9\rptCartas9SCI.vb">
+      <DependentUpon>rptCartas9SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta9\rptDetalles9SCI.vb">
+      <DependentUpon>rptDetalles9SCI.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\sci\carta9\SCI9.Designer.vb">
+      <DependentUpon>SCI9.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reportes\sci\carta9\SCI9.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="reportes\bcp\carta1\BCP.resx">
+      <DependentUpon>BCP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporte.resx">
+      <DependentUpon>frmReporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubReporte.resx">
+      <DependentUpon>frmSubReporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\bcp\carta1\rptCartas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCartas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\bcp\carta1\rptDetalles.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\dinners\carta1\DINNERS1.resx">
+      <DependentUpon>DINNERS1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\dinners\carta1\rptCarta1Dinners.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta1Dinners.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\dinners\carta1\rptDetalles1Dinners.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles1Dinners.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\dinners\carta2\DINNERS2.resx">
+      <DependentUpon>DINNERS2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\dinners\carta2\rptCarta2Dinners.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta2Dinners.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\dinners\carta2\rptDetalles2Dinners.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles2Dinners.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta1\FINANCIERO1.resx">
+      <DependentUpon>FINANCIERO1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta1\rptCarta1Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta1Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta1\rptDetalles1Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles1Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta2\FINANCIERO2.resx">
+      <DependentUpon>FINANCIERO2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta2\rptCarta2Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta2Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta2\rptDetalles2Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles2Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta3\FINANCIERO3.resx">
+      <DependentUpon>FINANCIERO3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta3\rptCarta3Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta3Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta3\rptDetalles3Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles3Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta4\FINANCIERO4.resx">
+      <DependentUpon>FINANCIERO4.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta4\rptCarta4Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta4Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta4\rptDetalles4Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles4Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta5\FINANCIERO5.resx">
+      <DependentUpon>FINANCIERO5.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta5\rptCarta5Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta5Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta5\rptDetalles5Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles5Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta6\FINANCIERO6.resx">
+      <DependentUpon>FINANCIERO6.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta6\rptCarta6Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta6Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta6\rptDetalles6Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles6Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta7\FINANCIERO7.resx">
+      <DependentUpon>FINANCIERO7.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta7\rptCarta7Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta7Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\financiero\carta7\rptDetalles7Finan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles7Finan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rpp\carta1\CartaRPP.resx">
+      <DependentUpon>CartaRPP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rpp\carta1\EECC.resx">
+      <DependentUpon>EECC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rpp\carta1\RPP1.resx">
+      <DependentUpon>RPP1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rpp\carta1\rpp_eecc.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpp_eecc.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\rpp\carta1\rptCartasRpp.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCartasRpp.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta7\rptCartas7SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCartas7SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta7\rptDetalles7SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles7SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta7\SCI7.resx">
+      <DependentUpon>SCI7.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta6\rptCartas6SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCartas6SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta6\rptDetalles6SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles6SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta6\SCI6.resx">
+      <DependentUpon>SCI6.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta5\rptCartas5SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCartas5SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta5\rptDetalles5SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles5SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta5\SCI5.resx">
+      <DependentUpon>SCI5.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta4\rptCartas4SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCartas4SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta4\rptDetalles4SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles4SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta4\SCI4.resx">
+      <DependentUpon>SCI4.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta3\rptCarta3SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta3SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta3\rptDetalles3SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles3SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta3\SCI3.resx">
+      <DependentUpon>SCI3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta2\rptCarta2SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta2SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta2\rptDetalles2SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles2SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta2\SCI2.resx">
+      <DependentUpon>SCI2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta1\SCI1.resx">
+      <DependentUpon>SCI1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta1\rptCarta1SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta1SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta1\rptDetalles1SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles1SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\gnb\carta1\GNB.resx">
+      <DependentUpon>GNB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\gnb\carta1\rptCarta1GNB.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCarta1GNB1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\gnb\carta1\rptDetallesGNB.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetallesGNB.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta8\rptCartas8SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCartas8SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta8\rptDetalles8SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles8SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta8\SCI8.resx">
+      <DependentUpon>SCI8.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta9\rptCartas9SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCartas9SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta9\rptDetalles9SCI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalles9SCI.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\sci\carta9\SCI9.resx">
+      <DependentUpon>SCI9.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Base.xsc">
+      <DependentUpon>Base.xsd</DependentUpon>
+    </None>
+    <None Include="Base.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Base.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Base.xss">
+      <DependentUpon>Base.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="reportes\rpp\cli_unicos.xsc">
+      <DependentUpon>cli_unicos.xsd</DependentUpon>
+    </None>
+    <None Include="reportes\rpp\cli_unicos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cli_unicos.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="reportes\rpp\cli_unicos.xss">
+      <DependentUpon>cli_unicos.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\popup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viawest_icons_Cloud Recovery DRaaS_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sobre_mini1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-kobsa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bcp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bcp-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gnb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gnb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sci.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banco-financiero1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bcp_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_kobsa.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kobranzas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bcp_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bcp_logo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bcp_logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data-add-database-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
